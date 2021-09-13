@@ -1,4 +1,4 @@
-package com.Codegym.week1.day2;
+package com.Codegym.week1.leapfor;
 
 import java.util.Scanner;
 

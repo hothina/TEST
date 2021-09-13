@@ -1,4 +1,4 @@
-package com.Codegym.week1.day2;
+package com.Codegym.week1.leapfor;
 
 import java.util.Scanner;
 
@@ -69,13 +69,10 @@ public class DrawingMenu2 {
                         }
                         case "c": {
                             System.out.println(" top - left ");
-                            for (int i = 1; i <= widthT; i++) {
+                            for (int i = widthT;i >= 1; i--) {
 
-                                for (int j = widthT - i; j >= 1; j--) {
-                                    System.out.print(" * ");
-                                }
                                 for (int k = 1; k <= i; k++) {
-                                    System.out.print("   ");
+                                    System.out.print(" * ");
                                 }
                                 System.out.println();
                             }
