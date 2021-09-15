@@ -7,10 +7,6 @@ public class ReadNumber {
     public static String readOne(int a) {
         String str = "";
         switch (a) {
-            case 0: {
-                str = "zero";
-                break;
-            }
             case 1: {
                 str = "one";
                 break;
@@ -49,10 +45,11 @@ public class ReadNumber {
             }
 
         }
-        return str ;
+        return str;
     }
+
     public static String read10_19(int a) {
-        String str = "" ;
+        String str = "";
         switch (a) {
             case 0: {
                 str = "teen";
@@ -74,10 +71,13 @@ public class ReadNumber {
                 str = "fifteen";
                 break;
 
-            case 4:
+            case 8:
+                str = "eighteen";
+                break;
+
             case 6:
             case 7:
-            case 8:
+            case 4:
             case 9:
                 str = readOne(a) + "teen";
                 break;
@@ -86,6 +86,7 @@ public class ReadNumber {
         }
         return str;
     }
+
     public static String readGreater20(int a) {
         String str = "";
         switch (a) {
@@ -94,8 +95,8 @@ public class ReadNumber {
                 break;
             }
             case 3: {
-               str = "thirty";
-               break;
+                str = "thirty";
+                break;
             }
             case 5: {
                 str = "fifty";
@@ -108,22 +109,22 @@ public class ReadNumber {
             case 9:
                 str = readOne(a) + "ty";
                 break;
-            }
-             return str;
         }
+        return str;
+    }
 
-        public static void main(String[] args) {
-            int weight ;
+    public static void main(String[] args) {
+        int weight;
 
-            Scanner scanner = new Scanner(System.in);
-            System.out.print("Input weight: ");
-            weight = scanner.nextInt();
-            int hundred =  weight  /  100 ;
-            int dozens  = weight % 100 ;
-            int ones = weight % 10 ;
-            String readH ="";
-            String readD ="";
-
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Input weight: ");
+        weight = scanner.nextInt();
+        int hundred = weight / 100;
+        int dozens = weight % 100;
+        int ones = weight % 10;
+        String readH = "";
+        String readD = "";
+        if (weight != 0) {
             if (hundred != 0) {
                 if (weight % 100 == 0) {
                     readH = readOne(hundred) + " hundred";
@@ -132,21 +133,25 @@ public class ReadNumber {
                 }
             }
 
-            if(dozens >= 20){
+            if (dozens >= 20) {
                 if (ones != 0) {
-                    readD = readGreater20(  dozens/ 10 )+ " " + readOne(ones) ;
-                }else
-                    readD = readGreater20(  dozens/ 10 ) ;
-            }else  {
+                    readD = readGreater20(dozens / 10) + " " + readOne(ones);
+                } else
+                    readD = readGreater20(dozens / 10);
+            } else {
                 if (dozens >= 10) {
                     readD = read10_19(dozens % 10);
                 } else {
                     if (ones != 0) {
-                        readD =  readOne(ones);
+                        readD = readOne(ones);
                     }
+
                 }
             }
             System.out.print(weight + " read is '" + readH + readD + "' kg ");
+        } else
+            System.out.print(weight + " read is zero kg ");
+
 
     }
 
