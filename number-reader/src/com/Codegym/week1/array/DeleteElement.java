@@ -10,10 +10,11 @@ public class DeleteElement {
             System.out.println("nhập vào số phần tử của mảng:");
             n = scanner.nextInt();
         } while (n <= 0);
+
         int A[] = new int[n];
         System.out.println("nhập các phần tử cho mảng:");
         for (i = 0; i < n; i++) {
-            System.out.print("nhập phần tử thứ" + i + ":");
+//            System.out.print("nhập phần tử thứ" + i + ":");
             A[i] = scanner.nextInt();
         }
 
