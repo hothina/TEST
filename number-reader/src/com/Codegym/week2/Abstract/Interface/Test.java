@@ -10,8 +10,16 @@ public class Test {
             System.out.println(animal.makeSound());
 
             if (animal instanceof Chicken) {
-                Edible edibler = (Chicken) animal;
-                System.out.println(edibler.howToEat());
+//                Edible edibler = (Chicken) animal;
+//                System.out.println(edibler.howToEat());
+                Edible edibleObj = new Edible() {
+                    @Override
+                    public String howToEat() {
+                        return "can eat";
+                    }
+                };
+                System.out.println(edibleObj.howToEat());
+
             }
         }
         Fruit[] fruits = new Fruit[2];

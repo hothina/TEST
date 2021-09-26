@@ -10,6 +10,7 @@ public class QuadracticEquation {
         this.b = b;
         this.c = c;
     }
+
     public double getA() {
         return this.a;
     }
@@ -45,7 +46,8 @@ public class QuadracticEquation {
         QuadracticEquation X = new QuadracticEquation(a, b, c);
         delta = X.getDiscriminant();
         if (delta > 0) {
-            System.out.println("The equation has 2 constraints : " + (-b + Math.sqrt(delta)) / (2 * a) + " and " + (-b - Math.sqrt(delta)) / (2 * a));
+            System.out.println("The equation has 2 constraints : " + (-b + Math.sqrt(delta)) / (2 * a)
+                    + " and " + (-b - Math.sqrt(delta)) / (2 * a));
         } else if (delta == 0) {
             System.out.println("The equation with 1 solution is: " + (-b / (2 * a)));
         } else {

@@ -15,7 +15,7 @@ public class Main {
         System.out.print("ABCbank Welcome " + customer.getName());
         System.out.print("\nFollow the Menu to using our service");
 
-        int result5 = choice.compareToIgnoreCase("X");
+        int result5 ;
 
         do {
             System.out.print("\nMenu:");
@@ -47,7 +47,7 @@ public class Main {
                 do {
                     System.out.print("\nEnter Amount of money you want to make deposit (less than 100 million): ");
                     str = input.nextLine();
-                    if (str.length() <= 9) {
+                    if (str.length() < 9) {
                         Pattern pattern = Pattern.compile("\\d*");
                         Matcher matcher = pattern.matcher(str);
                         if (matcher.matches()) {
@@ -71,7 +71,7 @@ public class Main {
                 do {
                     System.out.print("\nEnter Amount of money you want to withdraw (less than 100 million): ");
                     str = input.nextLine();
-                    if (str.length() <= 9) {
+                    if (str.length() < 9) {
                         Pattern pattern = Pattern.compile("\\d*");
                         Matcher matcher = pattern.matcher(str);
                         if (matcher.matches()) {
@@ -83,11 +83,11 @@ public class Main {
                                 check = 1;
                             } else {
                                 System.out.print("\nYour input more than your account balance, Please try again!");
-                                System.out.print("\n==========================================================================");
+                                System.out.print("\n====================================================================");
                             }
                         } else {
                             System.out.print("\nYour input is not a number, Please try again!");
-                            System.out.print("\n==========================================================================");
+                            System.out.print("\n========================================================================");
                         }
                     } else {
                         System.out.print("\nYour amount money is more than 100 million, Please try again!");

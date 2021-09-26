@@ -56,7 +56,7 @@ public class ReadNumber {
                 break;
             }
             case 1:
-                str = "elevent";
+                str = "eleven";
                 break;
 
             case 2:
@@ -113,6 +113,18 @@ public class ReadNumber {
         return str;
     }
 
+    public static String lessThan20(int dozens,int unit){
+        String readD=null;
+        if (dozens >= 10) {
+            readD = read10_19(dozens % 10);
+        } else {
+            if (unit != 0) {
+                readD ="and "+ readOne(unit);
+            }
+        }
+        return readD;
+    }
+
     public static void main(String[] args) {
         int weight;
 
@@ -121,38 +133,25 @@ public class ReadNumber {
         weight = scanner.nextInt();
         int hundred = weight / 100;
         int dozens = weight % 100;
-        int ones = weight % 10;
+        int unit = weight % 10;
         String readH = "";
         String readD = "";
-        if (weight != 0) {
-            if (hundred != 0) {
-                if (weight % 100 == 0) {
-                    readH = readOne(hundred) + " hundred";
-                } else {
-                    readH = readOne(hundred) + " hundred and ";
-                }
-            }
+        if (weight == 0) {
+            System.out.print(weight + " read is zero kg ");
+        } else {
+            if (hundred != 0)
+                readH = readOne(hundred) + " hundred ";
 
             if (dozens >= 20) {
-                if (ones != 0) {
-                    readD = readGreater20(dozens / 10) + " " + readOne(ones);
-                } else
+                if (unit != 0)
+                    readD = readGreater20(dozens / 10) + " " + readOne(unit);
+                else
                     readD = readGreater20(dozens / 10);
             } else {
-                if (dozens >= 10) {
-                    readD = read10_19(dozens % 10);
-                } else {
-                    if (ones != 0) {
-                        readD = readOne(ones);
-                    }
-
-                }
+                    readD=lessThan20(dozens,unit);
             }
             System.out.print(weight + " read is '" + readH + readD + "' kg ");
-        } else
-            System.out.print(weight + " read is zero kg ");
-
-
+        }
     }
 
 }

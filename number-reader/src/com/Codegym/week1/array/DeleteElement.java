@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 public class DeleteElement {
     public static void main(String[] args) {
+
+
         int n, i, c;
         Scanner scanner = new Scanner(System.in);
         do {
@@ -27,8 +29,11 @@ public class DeleteElement {
             }
         }
         n = c;
+        for (i = n; i < A.length; i++) {
+            A[i]=0;
+        }
         System.out.println("mảng còn lại sau khi xóa phần tử" + k + "là:");
-        for (i = 0; i < n; i++) {
+        for (i = 0; i < A.length; i++) {
             System.out.print(A[i] + "\t");
         }
 
