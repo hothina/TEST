@@ -39,10 +39,16 @@ public class DrawingMenu {
                     System.out.println("* * * * * *");
                     System.out.println("* * * * * *");
                     break;
-                case 0:
-                    System.exit(0);
+//                case 0:
+//                    System.exit(0);
                 default:
                     System.out.println("No choice!");
+            }
+            System.out.println("muon tro ve mennu ko");
+            System.out.println("1 yes, 2 no");
+            choice = input.nextInt();
+            if (choice==2){
+                System.exit(2);
             }
         }
 

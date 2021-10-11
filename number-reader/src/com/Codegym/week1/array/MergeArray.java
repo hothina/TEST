@@ -21,14 +21,14 @@ public class MergeArray {
         arr1 = new int[size1];
         int i = 0;
         while (i < arr1.length) {
-            System.out.println("Element " +(i+1)+ " in arr1: ");
+            System.out.print("Element " +(i+1)+ " in arr1: ");
             arr1[i] = input.nextInt();
             i++;
         }
         arr2 = new int[size2];
         int j = 0;
         while (j < arr2.length) {
-            System.out.println("Element "+(j +1) +" in arr2: ");
+            System.out.print("Element "+(j +1) +" in arr2: ");
             arr2[j] = input.nextInt();
             j++;
         }

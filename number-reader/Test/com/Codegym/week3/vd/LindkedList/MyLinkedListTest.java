@@ -11,7 +11,7 @@ class MyLinkedListTest {
             ll.addFirst(13);
 
             ll.add(4,9);
-            ll.add(4,9);
+            ll.add(1,9);
             ll.printList();
 
     }

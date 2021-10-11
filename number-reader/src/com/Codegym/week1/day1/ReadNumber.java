@@ -102,10 +102,13 @@ public class ReadNumber {
                 str = "fifty";
                 break;
             }
-            case 4:
+            case 8: {
+                str = "eighty";
+                break;
+            }
             case 6:
             case 7:
-            case 8:
+            case 4:
             case 9:
                 str = readOne(a) + "ty";
                 break;

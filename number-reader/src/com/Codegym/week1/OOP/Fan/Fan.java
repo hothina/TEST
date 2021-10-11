@@ -1,50 +1,59 @@
 package com.Codegym.week1.OOP.Fan;
 
 public class Fan {
-    int speed = 1;
-    private boolean status = false;
-    private double radius = 5;
-    private String color = "blue";
+   private int Speed = 1;
+   private boolean isOn = false;
+   private String Color = " blue";
+   private double radius = 5;
 
-    public int getSpeed() {
-        return this.speed;
-    }
-    public int setSpeed(int speed){
-        this.speed = speed;
-        return this.speed;
-    }
+   public Fan(){}
 
-    public boolean getStatus(){
-        return this.status;
-    }
-    public boolean setStatus(boolean status){
-        this.status = status;
-        return this.status;
-    }
+   public Fan(int speed, boolean isOn, String color, double radius) {
+      Speed = speed;
+      this.isOn = isOn;
+      Color = color;
+      this.radius = radius;
+   }
 
-    public double getRadius(){
-        return this.radius;
-    }
-    public double setRadius (double radius){
-        this.radius = radius;
-        return this.radius;
-    }
+   public int getSpeed() {
+      return Speed;
+   }
 
-    public String getColor(){
-        return this.color;
-    }
-    public String setColor(String color) {
-        this.color = color;
-        return this.color;
-    }
+   public void setSpeed(int speed) {
+      Speed = speed;
+   }
 
-    public String toString(){
-        String str = "Speed: " + this.getSpeed() + ", radius: " + this.getRadius() + ", color: " + this.getColor();
-        if (this.getStatus() == true) {
-            str += ", fan is on";
-        } else {
-            str += ", fan is off";
-        }
-        return str;
-    }
+   public boolean isOn() {
+      return isOn;
+   }
+
+   public void setOn(boolean on) {
+      isOn = on;
+   }
+
+   public String getColor() {
+      return Color;
+   }
+
+   public void setColor(String color) {
+      Color = color;
+   }
+
+   public double getRadius() {
+      return radius;
+   }
+
+   public void setRadius(double radius) {
+      this.radius = radius;
+   }
+
+   @Override
+   public String toString() {
+      return "Fan{" +
+              "Speed=" + Speed +
+              ", isOn=" + isOn +
+              ", Color='" + Color + '\'' +
+              ", radius=" + radius +
+              '}';
+   }
 }

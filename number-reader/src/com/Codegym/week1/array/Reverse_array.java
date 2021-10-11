@@ -13,7 +13,7 @@ public class Reverse_array {
             size = scanner.nextInt();
             if (size > 20)
                 System.out.println("Size does not exceed 20");
-        } while (size > 20);
+        } while (size > 20 );
         array = new int[size];
         int i = 0;
         while (i < array.length) {

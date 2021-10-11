@@ -1,29 +1,25 @@
 package com.Codegym.week1.OOP.StopWatch;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         StopWatch watch = new StopWatch();
-        Scanner scanner = new Scanner(System.in);
-        String request = "";
-
-        do {
-            System.out.println("Enter 'begin' to start the Stopwatch: ");
-            request = scanner.nextLine().toString();
-            if (request.equals("begin")){
-                watch.Start();
-            }
-        } while (!request.equals("begin"));
-
-        do {
-            System.out.println("Enter 'end' to stop the Stopwatch: ");
-            request = scanner.nextLine();
-            if (request.equals("end")){
-                watch.End();
-                System.out.println("Elapsed time: " + watch.getElapsedTimeSecs() + " second");
-            }
-        } while (!request.equals("end"));
+//        watch.start();
+//        watch.sort(watch.initArray());
+//        watch.stop();
+//        System.out.println(watch.getElapsedTime());
+        watch.start();
+        int[] array = watch.initArray();
+      int[] arr = watch.sort(array);
+        System.out.println("\n");
+        for (int i =0; i< arr.length;i++){
+            System.out.print(arr[i]+ " ");
+        }
+        watch.stop();
+        System.out.println("\n");
+        System.out.println(watch.getElapsedTime());
 
     }
 }

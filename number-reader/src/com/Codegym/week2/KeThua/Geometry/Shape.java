@@ -1,11 +1,14 @@
 package com.Codegym.week2.KeThua.Geometry;
 
-public class Shape {
+public abstract class Shape {
     private String color = "green";
     private boolean filled = true;
 
     public Shape(){
     }
+
+     abstract double getArea() ;
+     abstract double getPerimeter() ;
 
     public Shape(String color,boolean filled){
         this.color = color;
@@ -36,11 +39,11 @@ public class Shape {
     }
 
     public static void main(String[] args) {
-        Shape shape = new Shape();
-        System.out.println(shape);
+       // Shape shape = new Shape();
+       // System.out.println(shape);
 
-        shape = new Shape("red", false);
-        System.out.println(shape);
+       // shape = new Shape("red", false);
+       // System.out.println(shape);
 
     }
 
