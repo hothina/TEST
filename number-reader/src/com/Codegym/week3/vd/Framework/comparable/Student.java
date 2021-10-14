@@ -1,5 +1,7 @@
 package com.Codegym.week3.vd.Framework.comparable;
 
+
+
 public class Student implements Comparable <Student> {
     private String name;
     private int age;
@@ -49,7 +51,10 @@ public class Student implements Comparable <Student> {
     public int compareTo(Student student) {
         return this.getName().compareTo(student.getName());
     }
-}
+
+
+    }
+
 
 
 
