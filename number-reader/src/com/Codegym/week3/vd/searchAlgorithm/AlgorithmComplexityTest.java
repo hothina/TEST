@@ -1,4 +1,4 @@
-package com.Codegym.week3.vd.searchTT;
+package com.Codegym.week3.vd.searchAlgorithm;
 
 import java.util.Scanner;
 

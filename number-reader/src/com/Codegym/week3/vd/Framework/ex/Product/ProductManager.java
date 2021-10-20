@@ -1,8 +1,8 @@
 package com.Codegym.week3.vd.Framework.ex.Product;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Scanner;
+import java.util.*;
+
+import static com.Codegym.week3.vd.Framework.ex.Product.TestProductM.menu;
 
 public class ProductManager {
 
@@ -16,7 +16,7 @@ public class ProductManager {
     Scanner scanner = new Scanner(System.in);
 
     public void add(Product product) throws Exception {
-        //  product = getById(product.getId());
+
 //        if (getById(product.getId()) == null)
         this.listproducts.add(product);
 //        else
@@ -31,45 +31,79 @@ public class ProductManager {
         return null;
     }
 
-
-
-
-    public void edit() {
+    public void edit() throws Exception {
         System.out.print("Enter product id: ");
         int id = scanner.nextInt();
 
-        for (Product p : this.listproducts) {
-            if (p.getId() == id) {
-                isIdValid = true;
-                System.out.print("enter name:");
-                p.setName(scanner.next());
-                System.out.print("enter price");
-                p.setPrice(scanner.nextInt());
-                break;
-            }
-        }
+        Product p = getById(id) ;
+        if (p!=null) {
+            String choice;
+            do{
+                System.out.println("menu edit product");
+                System.out.println("1. Edit name product ");
+                System.out.println("2. Edit price product");
+                System.out.println("3. Exit");
 
-        if (!isIdValid) {
+                choice = scanner.next();
+                switch (choice){
+                    case "1":
+                        System.out.println("enter name");
+                        p.setName(scanner.next());
+                        break;
+                    case "2":
+                        System.out.println("enter price");
+                        p.setPrice(scanner.nextInt());
+                        break;
+                    case "3":
+                        menu();
+                        break;
+
+                }
+
+            } while (!choice.equals("3"));
+        } else {
             System.out.println("not find id");
         }
+
+//        for (Product p : this.listproducts) {
+//            if (p.getId() == id) {
+//                isIdValid = true;
+//                System.out.print("enter name:");
+//                p.setName(scanner.next());
+//                System.out.print("enter price");
+//                p.setPrice(scanner.nextInt());
+//                break;
+//            }
+//        }
+
+//        if (!isIdValid) {
+//            System.out.println("not find id");
+//        }
 
 
     }
 
-    public void delete() {
+    public void delete() throws Exception {
         System.out.print("Enter product id");
         int id = scanner.nextInt();
-        for (Product p : this.listproducts) {
-            if (p.getId() == id) {
-                isIdValid =true;
-                this.listproducts.remove(p);
-                break;
-            }
+        Product p = this.getById(id) ;
 
-        }
-        if (!isIdValid){
+        if(p!=null){
+            this.listproducts.remove(p);
+        }  else {
             System.out.println("not find id");
         }
+//        for (Product p : this.listproducts) {
+//            if (p.getId() == id) {
+//                isIdValid =true;
+//                this.listproducts.remove(p);
+//                break;
+//            }
+//
+//        }
+//        if (!isIdValid){
+//            System.out.println("not find id");
+//        }
 
     }
 
@@ -102,7 +136,7 @@ public class ProductManager {
             System.out.println("There are no products in the list !");
         } else {
             PriceAscendingComparator priceAscendingComparator = new PriceAscendingComparator();
-            Collections.sort(this.listproducts,priceAscendingComparator);
+            this.listproducts.sort(priceAscendingComparator);
             System.out.println("PriceAscendingComparator");
             int i=1;
             for (Product p:this.listproducts) {
@@ -116,7 +150,7 @@ public class ProductManager {
             System.out.println("There are no products in the list !");
         } else {
             PriceDecreaseComarator priceDecreaseComarator = new PriceDecreaseComarator();
-            Collections.sort(this.listproducts,priceDecreaseComarator);
+            this.listproducts.sort(priceDecreaseComarator);
             System.out.println("PriceDecreaseComparator");
             int i=1;
             for (Product p:this.listproducts) {
